@@ -157,7 +157,7 @@ close("\\Others");
 
 run("Select None");
 setTool("multipoint");
-run("Point Tool...", "type=Cross color=Red size=[Extra Large] label show counter=0");
+run("Point Tool...", "type=Hybrid color=Red size=[Large] label show counter=0");
 waitForUser("Action required", "Manually add selection. If no cells present, click ok");
 }
 

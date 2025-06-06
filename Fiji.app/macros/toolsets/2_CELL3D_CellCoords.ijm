@@ -34,18 +34,18 @@ macro "Mark CSN Action Tool - icon:neuron.png"{
  runMacro(getDirectory("macros")+"//toolsets//scripts//CELL3D_CountCells_channeldep.ijm");
 }
 
-macro "Delete ROI and Selection Tool - icon:pen.png" {
+macro "Delete All (ROI and Selection) Tool - icon:DeleteAll.png" {
 roiManager("deselect");
 roiManager("delete");
 run("Select None");	
 run("Set Scale...", "distance=0 known=0 unit=pixel");
 setTool("multipoint");
-run("Point Tool...", "type=Cross color=Red size=[Extra Large] label show counter=0");
+run("Point Tool...", "type=Hybrid color=Red size=[Large] label show counter=0");
 print("--- ROI and selection deleted. \n Use selection tool to add cells if necessary");
 }
 
 
-macro "Redo Threshold and cell selection Tool - icon:threshold.png" {
+macro "Set new threshold for cell selection Tool - icon:Rethreshold.png" {
 
 run("Select None");	
 ROIs = roiManager("count");
@@ -116,10 +116,21 @@ resetThreshold();
 
 }
 
+macro "Delete in Selection Area Action Tool - icon:DeleteInsideSelection.png"{
+	// to check coordinates again run this
+ runMacro(getDirectory("macros")+"//toolsets//scripts//CELL3D_DeteleInSelectionArea.ijm");
+}
+
+
+macro "Delete Outside Selection Area Action Tool - icon:DeleteOutsideSelection.png"{
+	// to check coordinates again run this
+ runMacro(getDirectory("macros")+"//toolsets//scripts//CELL3D_DeteleOutsideSelectionArea.ijm");
+}
+
 
 macro "Cleanup on Aisle Neuron Action Tool - icon:clean.png"{
 	// to check coordinates again run this
- runMacro(getDirectory("macros")+"//toolsets//scripts//CELL3D_updateCellCoords.ijm");
+ runMacro(getDirectory("macros")+"//toolsets//scripts//CELL3D_updateCellCoords_ByAnimal.ijm");
 }
 
 

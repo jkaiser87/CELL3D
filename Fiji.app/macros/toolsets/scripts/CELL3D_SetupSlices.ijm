@@ -45,6 +45,8 @@ function processFolder(input) {
 
 
 function processFile(input, file) {
+	var zipPath = input + "ZIP\\COORD" + File.separator + replace(file, ".tif", ".zip");
+if (!File.exists(zipPath)) {
 print(" -- Processing file " + file);
 open(input+file);
 
@@ -53,11 +55,9 @@ if(height>width) {
               run("Rotate 90 Degrees Right"); 
 }
 
-run("Enhance Contrast", "saturated=0.35");
-
 //rotate to midline
 setTool("line");
-waitForUser("Action required", "Make a line through the midline \n START AT TOP and go to bottom! \nMake no selection to skip rotating this image (del with Ctrl+Shift+A)");
+waitForUser("Action required", "Optional: Flip image with Shift + F (signal should always be on same side).\n\nMake a line through the midline \n START AT TOP and go to bottom! \nMake no selection to skip rotating this image (del sel with Ctrl+Shift+A)");
 
 if(selectionType()!= -1) {
 if (selectionType!=5)
@@ -99,6 +99,7 @@ roiManager("Add");
 saveCoordData(input, file);
 
 run("Close All");
+}
 }
 
 function saveCoordData(input, file) {

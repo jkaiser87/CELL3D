@@ -65,7 +65,7 @@ outputDir = dir + folderName + "/";
 File.makeDirectory(outputDir);
 
 // Build the folder name based on the user-specified channel-slot mapping
-colorMapping = newArray("R", "G", "B", "G", "C", "M", "Y"); // c1 -> R, c2 -> G, c3 -> B, etc.
+colorMapping = newArray("R", "G", "B", "Gr", "C", "M", "Y"); // c1 -> R, c2 -> G, c3 -> B, etc.
 colfolderName = "";
 
 // Iterate through the colorMapping array to ensure the correct color order (RGB, etc.)
@@ -109,8 +109,7 @@ for (i=0; i<list.length; i++) {
                             open(fileName);
                              // Check the image type
             				imageType = bitDepth();
-                           
-                           
+            				
                             // Convert RGB or 8-bit images to 16-bit
             				if (imageType >= 16) {
                 			run("16-bit");

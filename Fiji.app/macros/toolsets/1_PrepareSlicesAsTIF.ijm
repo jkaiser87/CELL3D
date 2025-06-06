@@ -110,5 +110,5 @@ macro "Crop Slices from Slide Action Tool - icon:crop.png"{
 
 
 macro "Merge Seperate TIF into Single Channel Action Tool - icon:merge.png"{
- runMacro(getDirectory("macros")+"//toolsets//scripts//MergeChannels_ByChannelname_JK.ijm");
+ runMacro(getDirectory("macros")+"//toolsets//scripts//MergeChannels_ByChannelname_JK_new.ijm");
 }
