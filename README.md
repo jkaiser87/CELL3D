@@ -127,7 +127,7 @@ If multiple animals provided, there will be subfolders in the folder "Slices" ac
 - Run. if asked, say "add to path"
 - a GUI will pop up:
 
-![CELL3D_Step1_GUI](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step1_GUI.png)
+[image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step1_GUI.png)
 
 - Choose channel(s) and assign an optional group.
 - Select the appropriate Atlas Type (e.g. adult or developmental).
@@ -142,7 +142,7 @@ You're now ready to view and save 3D plots of labeled cells of this animal! Refe
 
 #### 2. Plotting Multiple Animals into 1 figure
 
-![CELL3D_Step2_GUI](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.png)
+[image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.png)
 
 
 
