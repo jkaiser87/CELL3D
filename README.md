@@ -1,7 +1,58 @@
+# CELL3D: Quantitative Mapping of Labeled Cells in 3D Brain Space
 
-## Requirements and Setup
 
-### Data Format
+![image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_white.png)
+
+
+**CELL3D** is a MATLAB-based pipeline for analyzing and visualizing retrogradely labeled neurons in 3D, aligned to the Allen Brain Atlas. It supports batch processing of histological data, automatic coordinate transformation, and customizable plotting by anatomical features, genetic labels, or experimental conditions.
+
+![image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_showcase.png)
+
+
+--- 
+
+## Dependencies and Setup
+
+### FIJI.app
+- **Download FIJI** from the official <a href="https://fiji.sc/">website</a> and place it e.g. into your C: drive.
+- Download the **Fiji folder** from this repository and paste it into your `FIJI.app` folder. Make sure that it lands in the right subfolder (Fiji.app/macro/toolsets)
+    
+### MATLAB (tested on 2023a)
+
+This pipeline builds on AP_histology, a powerful toolkit for aligning histological images to the Allen Brain Atlas. We recommend following their excellent documentation for installation and usage. Special thanks to the AP_histology team for making this invaluable resource freely available to the community.
+
+#### AP_histology
+
+    [AP_histology](https://github.com/petersaj/AP_histology):
+    Follow the installation instructions on the original AP_histology GitHub repository.
+
+OR
+
+    [devAP_histology](https://github.com/jkaiser87/devAP_histology) (forked for developmental atlas support):
+    Supports both adult and developmental mouse brain atlases.
+    You can find it on GitHub here: jkaiser87/devAP_histology
+
+    MATLAB Toolboxes and Add-ons:
+
+        Ensure that the Curve Fitting Toolbox is installed.
+
+        Download and install the natsortfile add-on (Natural-Order Filename Sort, Version 3.4.5 by Stephen23).
+
+    MATLAB Scripts Folder:
+
+        Download the MATLAB folder from this toolbox.
+
+    Add to MATLAB Path:
+
+        Make sure that AP_histology or devAP_histology was added to the Path as described in their installation guide.
+
+
+---
+
+## File preparation
+
+## Data Format
+
 - **Requirement**: Folder containing single-slice TIF files of one coronal brain, sorted from rostral to caudal (additional pipeline provided that can help with cropping slide images and merging split-channel images).
 - **Important: Naming of the Files.** The pipeline **relies heavily on filenames** for correct processing and sorting. The correct syntax for the filenames is `EXP1-A2_filename_s001.tif` where:
   - The part **before the first underscore** (e.g., `EXP1-A2`) is used to **identify the animal** (and should be unique). This can include both the experiment and animal name, separated by a hyphen `-` if necessary.
@@ -11,7 +62,8 @@
 **Ensure that filenames always start with the animal name** (or a combination of experiment and animal name, ***unique!***). Anything before the first underscore will be treated as the animal identifier. This is critical for correct organization and grouping of data.
 
 **Example filenames that work for the pipeline:**
-```
+
+``` bash
 EXP1-A2_10x-Cortex_RFP-GFP-NeuN_s001.tif
 EXP1-A3_retroAAV-GFP_DAPI_fNissl_10x_s002_Ch01.tif
 EXP1-A3_retroAAV-GFP_DAPI_fNissl_10x_s002_Ch02.tif
@@ -19,18 +71,7 @@ EXP2-B5_thistext-really-doesnt-matter-as-long-as-the-rest_fits_s005_DAPI.tif
 EXP2-B5_thistext-really-doesnt-matter-as-long-as-the-rest_fits_s005_Alexa488.tif
 ```        
 
-### FIJI.app
-- **Download FIJI** from the official <a href="https://fiji.sc/">website</a>.
-- Download the necessary **Fiji folder** from this repository and paste it into your `FIJI.app` folder. Make sure that it lands in the right subfolder (Fiji.app/macro/toolsets)
-    
-### MATLAB (tested on 2023a)
-- This pipeline is built on **AP_histology**, developed by Andy Peters, which provides tools to align histology images to the Allen Brain Atlas. We recommend following their detailed documentation for setup and use. Special thanks to the AP_histology team for making this invaluable resource available to the community.
-- **AP_histology:** Follow the installation instructions on the <a href="https://github.com/petersaj/AP_histology">AP_histology GitHub page</a>
-- **MATLAB Toolboxes and Add-ons:**
-  - Install the **Curve Fitting Toolbox**.
-  - Install the **natsortfile add-on** (Natural-Order Filename Sort Version 3.4.5 by Stephen23).
-- Download the **MATLAB folder** from this toolbox and place it in your Windows user folder under `Documents/MATLAB/` (in addition to the AP-histology required files). 
-- **Make sure the MATLAB folder is added to your path (main menu > add to path > check all files and folders are listed, otherwise MATLAB won't find the scripts)**
+--- 
 
 ## Running the Pipeline
 ### FIJI - get coordinates of volume in 2D slices
@@ -81,9 +122,27 @@ If multiple animals provided, there will be subfolders in the folder "Slices" ac
   
 ### MATLAB - transform coordinates into CCFv3 space
 #### 1. Animal-specific transformation
-TBD
-#### 2. Plotting Multiple Animals into 1 
-TBD
+- Open `CELL3D_Step1_Animal_GUI.m` in MATLAB. 
+- Set Current folder to the folder containing the tif files of the first animal (eg 'Slices/EXP1-A1/')
+- Run. if asked, say "add to path"
+- a GUI will pop up:
+
+![CELL3D_Step1_GUI](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step1_GUI.png)
+
+- Choose channel(s) and assign an optional group.
+- Select the appropriate Atlas Type (e.g. adult or developmental).
+- Run AP_histology (alignment to CCF).
+- (Optional) Skip Med/Lat classification if not needed (Sahni Lab defined).
+- Run Coordinate → CCF transformation to visualize in 3D space.
+
+You're now ready to view and save 3D plots of labeled cells of this animal! Refer to the Help to find out more about the functions available.
+
+- Finally, to prepare for step 2, use the button "save to additional folder" and choose a folder to collect all `*.mat` files that should be processed.
+
+
+#### 2. Plotting Multiple Animals into 1 figure
+
+![CELL3D_Step2_GUI](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.png)
 
 
 
