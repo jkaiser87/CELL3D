@@ -123,26 +123,31 @@ If multiple animals provided, there will be subfolders in the folder "Slices" ac
 ### MATLAB - transform coordinates into CCFv3 space
 #### 1. Animal-specific transformation
 - Open `CELL3D_Step1_Animal_GUI.m` in MATLAB. 
-- Set Current folder to the folder containing the tif files of the first animal (eg 'Slices/EXP1-A1/')
-- Run. if asked, say "add to path"
+- Set Current folder to the folder containing the tif files of a single animal (eg 'Slices/EXP1-A1/')
+- Run the script (if asked, "add to path")
 - a GUI will pop up:
 
-[image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step1_GUI.PNG)
+![image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step1_GUI.PNG)
 
+- Check that all tif files are found and listed on the left
 - Choose channel(s) and assign an optional group.
-- Select the appropriate Atlas Type (e.g. adult or developmental).
-- Run AP_histology (alignment to CCF).
-- (Optional) Skip Med/Lat classification if not needed (Sahni Lab defined).
+- Select the appropriate Atlas Type (e.g. adult or developmental) to enable AP_histology.
+- Run AP_histology (alignment to CCF). After running through all steps (up to manual alignment), close the GUI and re-start CELL3D to refresh. 
+- (Optional) Med/Lat classification  as defined in Sahni Lab, can be skipped.
 - Run Coordinate → CCF transformation to visualize in 3D space.
+- This will display the cells within CCF space in a plot on the right.
+- You can also choose to mirror cells onto left/right hemisphere, choose what to colorby and explore the Batch saving options
 
 You're now ready to view and save 3D plots of labeled cells of this animal! Refer to the Help to find out more about the functions available.
 
-- Finally, to prepare for step 2, use the button "save to additional folder" and choose a folder to collect all `*.mat` files that should be processed.
-
+- To prepare for step 2 (summarizing several animals in one brain), use the button "save to additional folder" and choose a folder where the `_*coord.mat` file will be stored. Add all additional animals after processing them to this same folder.
 
 #### 2. Plotting Multiple Animals into 1 figure
 
-[image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.PNG)
+- Open `CELL3D_Step1_Animal_GUI.m` in MATLAB. 
+- Set Current folder to the folder containing the tif files of the first animal (eg 'Slices/EXP1-A1/')
+
+![image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.PNG)
 
 
 
