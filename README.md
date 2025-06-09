@@ -144,7 +144,7 @@ You're now ready to view and save 3D plots of labeled cells of this animal! Refe
 
 #### 2. Plotting Multiple Animals into 1 figure
 
-- Open `CELL3D_Step1_Animal_GUI.m` in MATLAB. 
+- Open `CELL3D_Step2_GUI.m` in MATLAB. 
 - Set Current folder to the folder containing the `_*coord.mat` files of all animals processed
 - Run the script (if asked, "add to path")
 - a GUI will pop up:
