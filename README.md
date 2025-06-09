@@ -136,7 +136,7 @@ If multiple animals provided, there will be subfolders in the folder "Slices" ac
 - (Optional) Med/Lat classification  as defined in Sahni Lab, can be skipped.
 - Run Coordinate → CCF transformation to visualize in 3D space.
 - This will display the cells within CCF space in a plot on the right.
-- You can also choose to mirror cells onto left/right hemisphere, choose what to colorby and explore the Batch saving options
+- You can also choose to mirror cells onto left/right hemisphere, choose what to colorby
 
 You're now ready to view and save 3D plots of labeled cells of this animal! Refer to the Help to find out more about the functions available.
 
@@ -145,11 +145,21 @@ You're now ready to view and save 3D plots of labeled cells of this animal! Refe
 #### 2. Plotting Multiple Animals into 1 figure
 
 - Open `CELL3D_Step1_Animal_GUI.m` in MATLAB. 
-- Set Current folder to the folder containing the tif files of the first animal (eg 'Slices/EXP1-A1/')
+- Set Current folder to the folder containing the `_*coord.mat` files of all animals processed
+- Run the script (if asked, "add to path")
+- a GUI will pop up:
 
 ![image](https://github.com/jkaiser87/CELL3D/blob/main/wiki/CELL3D_Step2_GUI.PNG)
 
-
+- `_*coord.mat` files from the same folder will be displayed within the table
+- Add Group names and Channel names if applicable
+- Add colors for each entry (either by using the "plotColor by Group/Channel" buttons or by adding them manually)
+- Exclude entries if applicable.
+- press "Update Plot" to display CELL3D coordinates within the CCF3 space on the right.
+- Manipulate the plot by using the buttons, colorby options or flipping options.
+- "Save Plot" saves the currently displayed plot to a file
+- For additional splitting and coloring options, check the "Batch processing" options.
 
 ## Future updates
-- [ ] Remove med/lat/cing assessment for public 
+- [ ] Remove med/lat/cing assessment for public
+- [ ] Add change folder option (currently wonky)
