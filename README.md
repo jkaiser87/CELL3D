@@ -30,21 +30,16 @@ OR
 
     [devAP_histology](https://github.com/jkaiser87/devAP_histology) (forked for developmental atlas support):
     Supports both adult and developmental mouse brain atlases.
-    You can find it on GitHub here: jkaiser87/devAP_histology
 
-    MATLAB Toolboxes and Add-ons:
+MATLAB Toolboxes and Add-ons:
+- Ensure that the Curve Fitting Toolbox is installed.
+- Download and install the natsortfile add-on (Natural-Order Filename Sort, Version 3.4.5 by Stephen23).
 
-        Ensure that the Curve Fitting Toolbox is installed.
+MATLAB Scripts Folder:
+- Download the MATLAB folder from this toolbox.
 
-        Download and install the natsortfile add-on (Natural-Order Filename Sort, Version 3.4.5 by Stephen23).
-
-    MATLAB Scripts Folder:
-
-        Download the MATLAB folder from this toolbox.
-
-    Add to MATLAB Path:
-
-        Make sure that AP_histology or devAP_histology was added to the Path as described in their installation guide.
+Add to MATLAB Path:
+Make sure that AP_histology or devAP_histology was added to the Path as described in their installation guide.
 
 
 ---
