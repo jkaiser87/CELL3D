@@ -23,13 +23,11 @@ This pipeline builds on AP_histology, a powerful toolkit for aligning histologic
 
 #### AP_histology
 
-    [AP_histology](https://github.com/petersaj/AP_histology):
-    Follow the installation instructions on the original AP_histology GitHub repository.
+[AP_histology](https://github.com/petersaj/AP_histology): Follow the installation instructions on the original AP_histology GitHub repository.
 
 OR
 
-    [devAP_histology](https://github.com/jkaiser87/devAP_histology) (forked for developmental atlas support):
-    Supports both adult and developmental mouse brain atlases.
+[devAP_histology](https://github.com/jkaiser87/devAP_histology) (forked for developmental atlas support): Supports both adult and developmental mouse brain atlases.
 
 MATLAB Toolboxes and Add-ons:
 - Ensure that the Curve Fitting Toolbox is installed.
