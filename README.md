@@ -91,7 +91,7 @@ Select the appropriate folder: Choose the folder that contains either whole-slid
 If multiple animals provided, there will be subfolders in the folder "Slices" according to the animal name.
 
 #### 2. CELL3D pipeline (semi-automatic detection of cells)
-![image](https://github.com/user-attachments/assets/0837537b-ea83-4e07-bb54-6a5238af1de2)
+<img width="638" height="106" alt="image" src="https://github.com/user-attachments/assets/493cd344-9dc1-425e-8a84-e112c1899407" />
 
 - Open FIJI and navigate to the toolbox by selecting `>>` `2_CELL3D_CellCoords`. 
 - ![image](https://github.com/user-attachments/assets/7f85864d-4866-470c-bfa6-9bd9f3986a01) Set the folder to a folder containing sections (multichannel) of 1 or more animals (this can be the folder "Slices" created in the previous step or directly a folder containing TIF files of 1 animal. Make sure that no other tif files are in this or a subfolder).
