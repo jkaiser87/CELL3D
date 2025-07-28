@@ -68,8 +68,10 @@ EXP2-B5_thistext-really-doesnt-matter-as-long-as-the-rest_fits_s005_Alexa488.tif
 
 ## Running the Pipeline
 ### FIJI - get coordinates of volume in 2D slices
-#### 1. Pre-processing of images 
-(Optional, creates folder containing single-slice TIF files of one coronal brain, sorted from rostral to caudal)
+#### 1. OPTIONAL: Pre-processing of images 
+Run this part to create a folder containing single-slice TIF files of one coronal brain, sorted from rostral to caudal. 
+Skip to Step 2 if your files are already sorted into 1 folder.
+
 ![image](https://github.com/user-attachments/assets/03f29abe-bd51-4ad2-b448-e559ca6c82ed)
 
 - Open FIJI and navigate to the toolbox by selecting `>>` `1_PrepareSlicesAsTif`. *(If you cannot find it, the files have not been copied into the right spot)*
